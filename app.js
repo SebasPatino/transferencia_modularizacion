@@ -90,3 +90,60 @@ Y ${primo}.`);
 
 // Llamamos a la función principal
 analizarNumero();
+
+// EJERCICIO 5 ------------------------------------------------------------------- 
+
+// Función flecha principal
+// Mostrar menú de calculadora y ejecutar operaciones
+const calculadora = () => {
+    let opcion;
+
+    do {
+        opcion = prompt(
+            `Seleccione una operación:
+            1. Sumar
+            2. Restar
+            3. Multiplicar
+            4. Dividir
+            5. Salir`
+        );
+
+        if (opcion === "5") {
+            alert("Gracias por usar la calculadora");
+            break;
+        }
+
+        // Pedimos los números solo si la opción no es salir
+        const num1 = parseFloat(prompt("Ingrese el primer número:"));
+        const num2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+        let resultado;
+
+        switch (opcion) {
+            case "1":
+                resultado = sumar(num1, num2);
+                alert(`El resultado de la suma es: ${resultado}`);
+                break;
+            case "2":
+                resultado = restar(num1, num2);
+                alert(`El resultado de la resta es: ${resultado}`);
+                break;
+            case "3":
+                resultado = multiplicar(num1, num2);
+                alert(`El resultado de la multiplicación es: ${resultado}`);
+                break;
+            case "4":
+                resultado = dividir(num1, num2);
+                if (resultado !== null) {
+                    alert(`El resultado de la división es: ${resultado}`);
+                }
+                break;
+            default:
+                alert("Opción no válida. Intente nuevamente.");
+        }
+
+    } while (opcion !== "5");
+};
+
+// Llamamos a la función principal
+calculadora();

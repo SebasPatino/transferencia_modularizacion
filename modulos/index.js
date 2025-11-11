@@ -2,8 +2,10 @@
 import { calcularPromedio, verificarPromedio, mostrarResultado } from "./ejercicio1.js";
 import { depositarSaldo, retirarSaldo, consultarSaldo } from "./ejercicio2.js";
 import { esPar, esPositivo, esPrimo } from "./ejercicio4.js";
+import { sumar, restar, multiplicar, dividir } from "./ejercicio5.js";
 
 // Exporta la función para que pueda ser importada desde este archivo
 export * from "./ejercicio1.js"
 export * from "./ejercicio2.js"
 export * from "./ejercicio4.js"
+export * from "./ejercicio5.js"
