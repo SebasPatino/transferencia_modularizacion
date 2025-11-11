@@ -6,7 +6,10 @@ import {
     mostrarResultado,
     depositarSaldo,
     retirarSaldo,
-    consultarSaldo
+    consultarSaldo,
+    esPar,
+    esPositivo,
+    esPrimo
  } from './modulos/index.js';
 
 // EJERCICIO 1 -------------------------------------------------------------------
@@ -68,3 +71,22 @@ do {
     }
 // El ciclo continúa mientras la opción elegida no sea "4"
 } while (opcion !== "4");
+
+// EJERCICIO 4 -------------------------------------------------------------------
+
+const analizarNumero = () => {
+    const numero = parseInt(prompt("Ingrese un número entero:"));
+
+    const tipo = esPar(numero);
+    const signo = esPositivo(numero);
+    const primo = esPrimo(numero) ? "sí es primo" : "no es primo";
+
+alert(`
+Número ingresado: ${numero}
+Es ${tipo}.
+Es ${signo}.
+Y ${primo}.`);
+};
+
+// Llamamos a la función principal
+analizarNumero();
