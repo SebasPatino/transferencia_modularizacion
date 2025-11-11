@@ -6,7 +6,7 @@ export function calcularPromedio(nota1, nota2, nota3) {
 // Evalúa si el estudiante aprueba o reprueba según su promedio.
 export function verificarPromedio(promedio) {
     if (promedio >= 3.0) {
-        return "Aprbado"
+        return "Aprobado"
     } else {
         return "Reprobado"
     }

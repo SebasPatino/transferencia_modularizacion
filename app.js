@@ -3,7 +3,10 @@
 import { 
     calcularPromedio,
     verificarPromedio,
-    mostrarResultado
+    mostrarResultado,
+    depositarSaldo,
+    retirarSaldo,
+    consultarSaldo
  } from './modulos/index.js';
 
 // EJERCICIO 1 -------------------------------------------------------------------
@@ -21,3 +24,47 @@ const estado = verificarPromedio(promedio);
 // Salida: mostramos el resultado final
 mostrarResultado(nombre, promedio, estado);
 
+// EJERCICIO 2 -------------------------------------------------------------------
+
+// Inicializamos el saldo del usuario en 0
+let saldo = 0;
+// Variable para almacenar la opción elegida por el usuario
+let opcion;
+
+// Estructura repetitiva que permite realizar varias operaciones
+// Se repite hasta que el usuario elija la opción "4" (Salir)
+do {
+    opcion = prompt(
+        `Seleccione una opción:
+        1. Depositar dinero
+        2. Retirar dinero
+        3. Consultar saldo
+        4. Salir`
+    );
+
+    // Estructura condicional para ejecutar una acción según la opción elegida
+    switch (opcion) {
+        // Opción 1: Depositar dinero
+        case "1":
+            const montoDeposito = parseFloat(prompt("Ingrese el monto a depositar:"));
+            saldo = depositarSaldo(saldo, montoDeposito);
+            break;
+        // Opción 2: Retirar dinero
+        case "2":
+            const montoRetiro = parseFloat(prompt("Ingrese el monto a retirar:"));
+            saldo = retirarSaldo(saldo, montoRetiro);
+            break;
+        // Opción 3: Consultar saldo
+        case "3":
+            consultarSaldo(saldo);
+            break;
+        // Opción 4: Salir del sistema
+        case "4":
+            alert("Gracias por usar el sistema bancario.");
+            break;
+        // Cualquier otra opción no válida
+        default:
+            alert("Opción no válida. Intente nuevamente.");
+    }
+// El ciclo continúa mientras la opción elegida no sea "4"
+} while (opcion !== "4");
