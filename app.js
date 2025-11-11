@@ -9,7 +9,11 @@ import {
     consultarSaldo,
     esPar,
     esPositivo,
-    esPrimo
+    esPrimo,
+    sumar,
+    restar,
+    multiplicar,
+    dividir
  } from './modulos/index.js';
 
 // EJERCICIO 1 -------------------------------------------------------------------
